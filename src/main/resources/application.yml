@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: prod
+
+
+
+kmlc:
+  ftpinfo:
+    host: localhost
+    port: 21
+    user: yedong
+    pass: xinglina113
+    path1: gd
+    prefix: km1001*,km1002*,km1003*
+  localfilepath:
+    path1: D:\\vmsfilepath
+  readfile: d:\\readfile.txt
+
+server:
+  port: 10036
