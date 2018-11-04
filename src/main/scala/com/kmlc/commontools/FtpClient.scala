@@ -30,7 +30,6 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       catch {
          case ex: Exception => {
             println("Ftp Client Login Error: " + ex.getMessage)
-            ex.printStackTrace()
             false
          }
       }
@@ -53,9 +52,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp upload Login Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -82,9 +79,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp rename  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -104,9 +99,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp rename  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -125,9 +118,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp remove  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -146,9 +137,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp makeDirecotory  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -169,9 +158,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp renameDirecotory  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -184,8 +171,8 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex:Exception =>{
-            ex.printStackTrace()
-            ""
+            //ex.printStackTrace()
+            throw ex
          }
       }
    }
@@ -198,7 +185,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex:Exception =>{
-            ex.printStackTrace()
+            throw ex
          }
       }
    }
@@ -213,7 +200,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
          case ex: Exception =>
          {
             //ex.printStackTrace()
-            List()
+            throw ex
          }
       }
    }
@@ -235,8 +222,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       catch {
          case ex: Exception =>
          {
-            ex.printStackTrace()
-            List()
+            throw ex
          }
       }
    }
@@ -256,9 +242,7 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
       }
       catch {
          case ex: Exception => {
-            println("Ftp removeDirecotory  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }
@@ -267,14 +251,11 @@ class FtpClient(host:String,port:Int,user:String,pass:String) {
    def closeClient: Boolean = {
       try {
          ftpClient.disconnect()
-         println("==============>>close ftp socket....")
          true
       }
       catch {
          case ex: Exception => {
-            println("Ftp disconnect  Error: " + ex.getMessage)
-            ex.printStackTrace()
-            false
+            throw ex
          }
       }
    }

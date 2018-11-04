@@ -15,6 +15,7 @@ kmlc:
   localfilepath:
     path1: D:\\vmsfilepath
   readfile: d:\\readfile.txt
+  intervalInSeconds: 20
 
 server:
   port: 10036

@@ -7,14 +7,20 @@ import org.springframework.beans.factory.annotation.{Configurable, Value}
 import org.springframework.scheduling.annotation.{EnableScheduling, Scheduled}
 import org.springframework.stereotype.Component
 import org.slf4j.LoggerFactory
+import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Configuration
+
+
+class SchedledConfiguration{}
+
+/*
 
 
 @Component
 @Configurable
 @Configuration
 @EnableScheduling
-class SchedledConfiguration {
+class SchedledConfiguration extends CommandLineRunner{
 
    private val logger = LoggerFactory.getLogger(classOf[SchedledConfiguration])
 
@@ -36,6 +42,10 @@ class SchedledConfiguration {
    private val listprefixs:String= null
 
 
+   override def run(args: String*): Unit = {
+   }
+
+
 
 
    @Scheduled(initialDelay = 3*1000, fixedRate = 1000)
@@ -52,3 +62,4 @@ class SchedledConfiguration {
    }
 
 }
+*/
